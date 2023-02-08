@@ -1,32 +1,34 @@
 import { Content } from "./content-interface";
 
-export class ContentList {
-  private _items: Content [];
+export class ContentList{
+  private contents: Content[];
 
-  constructor() {
-    this._items = [];
+  constructor(){
+    this.contents = [];
   }
 
-  getItems(): Content [] {
-    return this._items;
+  get contentsList(){
+    return this.contents;
   }
 
-  addFunction(contentItem: Content) {
-    return this._items.push(contentItem);
+  add(content: Content){
+    this.contents.push(content);
   }
 
-  getLength(){
-    return this._items.length;
+  count(){
+    return this.contents.length;
   }
 
-  printIndex(index: number): string {
-    let readerFriendlyHtml = `<div>`;
-    readerFriendlyHtml += `<p>` + this._items[index].title + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].description + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].type + `<p>`;
-    readerFriendlyHtml += `<p>` + this._items[index].creator + `<p>`;
-    readerFriendlyHtml += `<img src ="` + this._items[index].imgURL + `">`;
-    readerFriendlyHtml += `</div>`;
-    return readerFriendlyHtml;
+  getContentDetails(index: number){
+    let content = this.contents[index];
+    return `
+        <div>
+        <h1>${content.title}</h1>
+        <img src="${content.imgURL}">
+        <p>${content.description}</p>
+        <p>Creator: ${content.creator}</p>
+        <p>Type: ${content.type}</p>
+        </div><br>`;
   }
+
 }
