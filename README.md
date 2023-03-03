@@ -18,3 +18,13 @@ Assignment 2
 delete content-list class from content-card and delete content-list.ts helper file
 
 create content-list component
+
+add array of 6 items in content-list component
+
+add css in content card
+
+some errors in content card
+to display image and tags
+
+solve it
+Assignment 2 done
