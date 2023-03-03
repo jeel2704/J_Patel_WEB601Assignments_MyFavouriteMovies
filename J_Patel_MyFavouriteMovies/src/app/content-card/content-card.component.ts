@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 export class ContentCardComponent {
   @Input() content: any;
   @Input() image: string = '';
+  tags: string[] = [];
 }
