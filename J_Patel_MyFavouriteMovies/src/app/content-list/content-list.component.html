@@ -1,1 +1,4 @@
 <p>content-list works!</p>
+<div *ngFor="let content of contentArray | slice:0:5">
+  <app-content-card [content]="content"></app-content-card>
+</div>
