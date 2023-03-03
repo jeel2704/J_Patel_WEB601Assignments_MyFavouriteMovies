@@ -11,7 +11,7 @@ export class ContentListComponent implements OnInit{
     title: 'First Content',
     description: 'This is the first content',
     image: 'https://example.com/image1.jpg',
-    type: 'first',
+    type: 'action',
     tags: ['tag1', 'tag2', 'tag3'],
     creator: 'Stan lee'
   },
@@ -20,7 +20,7 @@ export class ContentListComponent implements OnInit{
       title: 'Second Content',
       description: 'This is the second content',
       image: 'https://example.com/image2.jpg',
-      type: 'second',
+      type: 'comedy',
       tags: ['tag4', 'tag5', 'tag6'],
       creator: 'James Cameron'
     },
@@ -29,7 +29,7 @@ export class ContentListComponent implements OnInit{
       title: 'Third Content',
       description: 'This is the third content',
       image: 'https://example.com/image3.jpg',
-      type: 'Third',
+      type: 'action',
       tags: ['tag7', 'tag8', 'tag9'],
       creator: 'John Smith',
     },
@@ -38,7 +38,7 @@ export class ContentListComponent implements OnInit{
       title: 'Forth Content',
       description: 'This is the Forth content',
       image: 'https://example.com/image1.jpg',
-      type: 'Forth',
+      type: 'action',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
@@ -47,7 +47,7 @@ export class ContentListComponent implements OnInit{
       title: 'Fifth Content',
       description: 'This is the Fifth content',
       image: 'https://example.com/image1.jpg',
-      type: 'Fifth',
+      type: 'horror',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
@@ -57,6 +57,14 @@ export class ContentListComponent implements OnInit{
       description: 'This is the sixth content',
       image: 'https://example.com/image1.jpg',
       type: 'sixth',
+      tags: ['tag1', 'tag2', 'tag3'],
+      creator: 'Stan lee'
+    },
+    {
+      id: 7,
+      title: 'seventh Content',
+      description: 'This is the seventh content',
+      image: 'https://example.com/image1.jpg',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
