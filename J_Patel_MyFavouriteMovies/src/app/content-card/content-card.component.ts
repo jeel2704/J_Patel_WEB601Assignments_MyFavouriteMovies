@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+// @ts-ignore
+import {content} from "../helper-files/content-interface";
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
