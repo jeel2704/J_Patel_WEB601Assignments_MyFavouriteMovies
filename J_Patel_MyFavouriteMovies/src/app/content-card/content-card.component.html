@@ -1,9 +1,17 @@
 <p>content-card works!</p>
-<ng-container *ngIf="image">
-  <img [src]="image">
-</ng-container>
+<div *ngFor="let content of contentArray">
+  <app-content-card [content]="content"></app-content-card>
+</div>
+<div [style.border]="index === 0 ? '2px solid black' : '1px solid gray'" style="display: inline-block; padding: 10px; margin: 10px;">
+  <header>
+    <h3>{{content.title}}</h3>
+  </header>
+  <img (click)="onImageClick()" [src]="content.image">
+  <p>{{content.description}}</p>
 
-<ng-container *ngIf="tags && tags.length">
-  <p>Tags: {{tags.join(', ')}}</p>
-</ng-container>
-
+  <p><b>Type:</b> {{content.type}}</p>
+  <p><b>Tags:</b>
+    <span *ngFor="let tag of content.tags">{{tag}}</span>
+  </p>
+  <p><b>Creator:</b> {{content.creator}}</p>
+</div>

@@ -1,4 +1,39 @@
 <p>content-list works!</p>
-<div *ngFor="let content of content | slice:0:5">
-  <app-content-card [content]="content"></app-content-card>
+
+<div>
+  <h1>action</h1>
+  <div *ngFor="let content of contents | filterContent:'action'" class="content-card">
+    <h1>{{ content.title }}</h1>
+    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
+    <p>{{content.description}}</p>
+    <p>Creator: {{ content.creator}}</p>
+    <p *ngIf="content.type" >Type: {{ content.type}}</p>
+    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
+  </div>
+</div>
+
+
+<div>
+  <h1>comedy</h1>
+  <div *ngFor="let content of contents | filterContent:'comedy'" class="content-card">
+    <h1>{{ content.title }}</h1>
+    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
+    <p>{{content.description}}</p>
+    <p>Creator: {{ content.creator}}</p>
+    <p *ngIf="content.type" >Type: {{ content.type}}</p>
+    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
+  </div>
+</div>
+
+<div>
+  <h1>Without Type</h1>
+  <div *ngFor="let content of contents | filterContent" class="content-card">
+    <h1>{{ content.title }}</h1>
+    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
+    <p>{{content.description}}</p>
+    <p>Creator: {{ content.creator}}</p>
+    <p *ngIf="content.type" >Type: {{ content.type}}</p>
+    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
+  </div>
+
 </div>

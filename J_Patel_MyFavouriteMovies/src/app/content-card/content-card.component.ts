@@ -6,8 +6,19 @@ import {content} from "../helper-files/content-interface";
   templateUrl: './content-card.component.html',
   styleUrls: ['./content-card.component.scss']
 })
-export class ContentCardComponent {
-  @Input() content: any;
-  @Input() image: string = '';
-  tags: string[] = [];
+export class ContentCardComponent implements OnInit {
+  // @ts-ignore
+  @Input() content: Content;
+  // @ts-ignore
+  @Input() index: number;
+  contentArray: any;
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  onImageClick() {
+    console.log(`Content ID: ${this.content.id} Title: ${this.content.title}`);
+  }
 }
