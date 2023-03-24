@@ -7,6 +7,10 @@ import {Content} from '../helper-files/content-interface';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent {
+  searchTitle: string | undefined;
+  searchResult: { message: string; color: string; } | undefined;
+
+
   contents: Content[] = [    {
     id: 1,
     title: 'First Content',
@@ -70,9 +74,21 @@ export class ContentListComponent {
       creator: 'Stan lee'
     },
   ];
-
-  loggingIDnTitle(content: any){
-    console.log(`ID: ${content.id}`);
-    console.log(`Title: ${content.title}`);
+  showIdAndTitle(id: number, title: string) {
+    console.log(`Content id: ${id}, title: ${title}`);
   }
+
+  constructor() { }
+
+  ngOnInit(): void {}
+
+  searchByTitle() {
+    const content = this.contents.find((c) => c.title === this.searchTitle);
+    if (content) {
+      this.searchResult = { message: `Content with title "${this.searchTitle}" exists.`, color: 'green' };
+    } else {
+      this.searchResult = { message: `Content with title "${this.searchTitle}" doesn't exist.`, color: 'red'};
+    }
+  }
+
 }

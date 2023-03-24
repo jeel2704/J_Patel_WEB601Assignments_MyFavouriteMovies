@@ -1,39 +1,23 @@
-<p>content-list works!</p>
-
-<div>
-  <h1>action</h1>
-  <div *ngFor="let content of contents | filterContent:'action'" class="content-card">
-    <h1>{{ content.title }}</h1>
-    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
-    <p>{{content.description}}</p>
-    <p>Creator: {{ content.creator}}</p>
-    <p *ngIf="content.type" >Type: {{ content.type}}</p>
-    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
-  </div>
-</div>
-
-
-<div>
-  <h1>comedy</h1>
-  <div *ngFor="let content of contents | filterContent:'comedy'" class="content-card">
-    <h1>{{ content.title }}</h1>
-    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
-    <p>{{content.description}}</p>
-    <p>Creator: {{ content.creator}}</p>
-    <p *ngIf="content.type" >Type: {{ content.type}}</p>
-    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
-  </div>
-</div>
-
-<div>
-  <h1>Without Type</h1>
-  <div *ngFor="let content of contents | filterContent" class="content-card">
-    <h1>{{ content.title }}</h1>
-    <img *ngIf="content.imgURL" [src]="content.imgURL" [alt]="content.title" (click)="loggingIDnTitle(content)">
-    <p>{{content.description}}</p>
-    <p>Creator: {{ content.creator}}</p>
-    <p *ngIf="content.type" >Type: {{ content.type}}</p>
-    <p *ngIf="content.tags" >Tags: {{ content.tags}}</p>
+<div *ngIf="contents">
+  <h3>Content with no type:</h3>
+  <div *ngFor="let content of contents | filterContent">
+    <app-content-card [content]="content"></app-content-card>
   </div>
 
+  <ng-container *ngFor="let type of filterContent">
+    <h3>Content with type {{ type }}:</h3>
+    <div *ngFor="let content of contents | filterContent:type">
+      <app-content-card [content]="content"></app-content-card>
+    </div>
+  </ng-container>
+  <div *ngFor="let content of contents | filterContent:type">
+    <app-content-card [content]="content" [class]="contentCard.typeClass"></app-content-card>
+  </div>
+  <div>
+    <input type="text" [(ngModel)]="searchTitle" placeholder="Search by title">
+    <button (click)="searchByTitle()">Search</button>
+  </div>
+  <div *ngIf="searchResult">
+    <p [ngStyle]="{'color': searchResult.color}">{{ searchResult.message}}</p>
+  </div>
 </div>
