@@ -36,3 +36,9 @@ create pipe with two different types of filter
 add search
 
 Assignment 3 done
+
+add default img
+
+Create an attribute directive called Hover-Affect
+
+assignment 4 done
