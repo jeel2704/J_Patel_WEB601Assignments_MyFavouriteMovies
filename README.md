@@ -28,3 +28,12 @@ to display image and tags
 
 solve it
 Assignment 2 done
+
+add seven content
+
+create pipe with two different types of filter
+
+add search
+
+Assignment 3 done
+
