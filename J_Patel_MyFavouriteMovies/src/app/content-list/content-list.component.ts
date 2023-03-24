@@ -42,7 +42,6 @@ export class ContentListComponent {
       id: 4,
       title: 'Forth Content',
       description: 'This is the Forth content',
-      imgURL: 'https://example.com/image1.jpg',
       type: 'action',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'

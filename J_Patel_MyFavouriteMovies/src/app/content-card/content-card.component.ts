@@ -7,9 +7,10 @@ import {Content} from "../helper-files/content-interface";
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent {
-  @Input() content: Content;
+  @Input() content: Content | undefined;
 
   get typeClass() {
+    // @ts-ignore
     return `content-type-${this.content.type ||'none'}`;
   }
 }
