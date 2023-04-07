@@ -8,6 +8,9 @@ import {Content} from "../helper-files/content-interface";
 })
 export class ContentCardComponent {
   @Input() content: Content | undefined;
+  displayContentInfo(): void {
+    console.log('Content info displayed');
+  }
 
   get typeClass() {
     // @ts-ignore

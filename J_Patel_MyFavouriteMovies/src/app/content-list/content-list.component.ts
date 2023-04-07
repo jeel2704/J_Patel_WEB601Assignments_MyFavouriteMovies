@@ -1,46 +1,50 @@
 import { Component } from '@angular/core';
 // @ts-ignore
 import {Content} from '../helper-files/content-interface';
+
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
-  styleUrls: ['./content-list.component.scss']
+  styleUrls: ['./content-list.component.scss'],
+
 })
 export class ContentListComponent {
   searchTitle: string | undefined;
   searchResult: { message: string; color: string; } | undefined;
 
-
-  contents: Content[] = [    {
+  title: string = '';
+  errTxt: boolean = false;
+  contents: Content[] = [
+    {
     id: 1,
-    title: 'First Content',
+    title: 'John-Wick-2',
     description: 'This is the first content',
-    imgURL: 'https://example.com/image1.jpg',
+    imgURL: 'https://lwlies.com/wp-content/uploads/2017/11/John-Wick-2-900x0-c-default.jpg',
     type: 'action',
     tags: ['tag1', 'tag2', 'tag3'],
     creator: 'Stan lee'
   },
     {
       id: 2,
-      title: 'Second Content',
+      title: 'Avengers',
       description: 'This is the second content',
-      imgURL: 'https://example.com/image2.jpg',
+      imgURL: 'https://image.tmdb.org/t/p/original/n3G6dLQPDDdKvUKWMlCI7LRH9TQ.jpg',
       type: 'comedy',
       tags: ['tag4', 'tag5', 'tag6'],
       creator: 'James Cameron'
     },
     {
       id: 3,
-      title: 'Third Content',
+      title: 'Spider Man',
       description: 'This is the third content',
-      imgURL: 'https://example.com/image3.jpg',
+      imgURL: 'https://image.tmdb.org/t/p/original/wZGlaMxBAjCIYLzyDWvocaoNooZ.jpg',
       type: 'action',
       tags: ['tag7', 'tag8', 'tag9'],
       creator: 'John Smith',
     },
     {
       id: 4,
-      title: 'Forth Content',
+      title: 'Iron man 3',
       description: 'This is the Forth content',
       type: 'action',
       tags: ['tag1', 'tag2', 'tag3'],
@@ -48,31 +52,36 @@ export class ContentListComponent {
     },
     {
       id: 5,
-      title: 'Fifth Content',
+      title: 'Joker',
       description: 'This is the Fifth content',
-      imgURL: 'https://example.com/image1.jpg',
+      imgURL: 'https://posterspy.com/wp-content/uploads/2020/01/JoelJensen_Joker1.jpg',
       type: 'comedy',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
     {
       id: 6,
-      title: 'sixth Content',
+      title: 'Avatar',
       description: 'This is the sixth content',
-      imgURL: 'https://example.com/image1.jpg',
+      imgURL: 'https://image.tmdb.org/t/p/original/8Y7WrRK1iQHEX7UIftBeBMjPjWD.jpg',
       type: 'action',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
     {
       id: 7,
-      title: 'seventh Content',
+      title: 'RRR',
       description: 'This is the seventh content',
-      imgURL: 'https://example.com/image1.jpg',
+      imgURL: 'https://i.postimg.cc/Dmkhq1H1/RRR-2019-Hindi-Dubbed-Full-Movie.jpg',
       tags: ['tag1', 'tag2', 'tag3'],
       creator: 'Stan lee'
     },
   ];
+  filterContent: any;
+  type: string | undefined;
+
+
+
   showIdAndTitle(id: number, title: string) {
     console.log(`Content id: ${id}, title: ${title}`);
   }
@@ -89,5 +98,22 @@ export class ContentListComponent {
       this.searchResult = { message: `Content with title "${this.searchTitle}" doesn't exist.`, color: 'red'};
     }
   }
+  addContent(newContent: Content) {
+    const AddPromise = new Promise((resolve, reject) => {
+      this.contents.push(newContent);
+      console.log(`Content Added successfully, Country: ${this.title}`);
+      this.contents = [...this.contents];
+      resolve(newContent.title);
+    });
+
+    AddPromise.then(title => {
+
+      this.errTxt = false;
+    }).catch(err => {
+      this.errTxt = true;
+    });
+
+  }
+
 
 }

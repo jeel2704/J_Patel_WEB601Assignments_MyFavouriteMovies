@@ -1,22 +1,23 @@
 <div class="content-card">
   <div class="card-img">
-    <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" (click)="displayContentInfo()"/>
+    <img *ngIf="content?.imgURL; else defaultImage" [src]="content?.imgURL" (click)="displayContentInfo()"/>
+
   </div>
   <ng-template #defaultImage>
     <img src="https://www.example.com/default-image.jpg" (click)="displayContentInfo()"/>
   </ng-template>
   <div class="card-info">
-    <h3>{{ content.title }}</h3>
-    <p>{{ content.description }}</p>
-    <p>Creator: {{ content.creator }}</p>
-    <p>Type: {{ content.type }}</p>
+    <h3>{{ content?.title }}</h3>
+    <p>{{ content?.description }}</p>
+    <p>Creator: {{ content?.creator }}</p>
+    <p>Type: {{ content?.type }}</p>
     <ul>
-      <li *ngFor="let tag of content.tags">{{ tag }}</li>
+      <li *ngFor="let tag of content?.tags">{{ tag }}</li>
     </ul>
 
     </div>
-  <p class="type" appHoverAffect>{{ content.type}}</p>
+  <p class="type" HoverAffectDirective>{{ content?.type}}</p>
 </div>
 <div class="tags">
-  <span *ngFor="let tag of content.tags" hoverAffect="bold">{{ tag }}</span>
+  <span *ngFor="let tag of content?.tags" hoverAffect="bold">{{ tag }}</span>
 </div>

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6cf7cef-0eda-4f71-9fc3-6eea6361adcc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-card/content-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-list/content-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/J_Patel_MyFavouriteMovies/src/app/content-list/content-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +32,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/J_Patel_WEB601Assignments_MyFavouriteMovies" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../New folder (2)/J_Patel_MyFavouriteMovies" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -41,6 +44,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678998141973</updated>
       <workItem from="1678998143865" duration="31000" />
+      <workItem from="1679689797613" duration="19000" />
     </task>
     <servers />
   </component>

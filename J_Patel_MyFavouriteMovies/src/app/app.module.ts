@@ -5,17 +5,24 @@ import { AppComponent } from './app.component';
 import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { FilterContentPipe } from './filter-content.pipe';
+import {FormsModule} from "@angular/forms";
+import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
+import { CreateContentComponent } from './create-content/create-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContentCardComponent,
     ContentListComponent,
-    FilterContentPipe
+    FilterContentPipe,
+    CreateContentComponent,
+    HoverAffectDirective,
+    CreateContentComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

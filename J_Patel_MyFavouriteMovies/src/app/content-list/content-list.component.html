@@ -1,18 +1,5 @@
-<div *ngIf="contents">
-  <h3>Content with no type:</h3>
-  <div *ngFor="let content of contents | filterContent">
-    <app-content-card [content]="content"></app-content-card>
-  </div>
-
-  <ng-container *ngFor="let type of filterContent">
-    <h3>Content with type {{ type }}:</h3>
-    <div *ngFor="let content of contents | filterContent:type">
-      <app-content-card [content]="content"></app-content-card>
-    </div>
-  </ng-container>
-  <div *ngFor="let content of contents | filterContent:type">
-    <app-content-card [content]="content" [class]="contentCard.typeClass"></app-content-card>
-  </div>
+<app-create-content (onCreation)="addContent($event)"></app-create-content>
+<div class= search *ngIf="contents">
   <div>
     <input type="text" [(ngModel)]="searchTitle" placeholder="Search by title">
     <button (click)="searchByTitle()">Search</button>
@@ -21,3 +8,82 @@
     <p [ngStyle]="{'color': searchResult.color}">{{ searchResult.message}}</p>
   </div>
 </div>
+
+<h3 hoverAffect="underline">No Type</h3>
+
+<ul>
+  <li *ngFor="let content of contents | filterContent">
+
+    <div class="content-card">
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 20%; height: 25% ">
+        <ng-template #defaultImage>
+          <img [src]="'https://i.pinimg.com/736x/bb/61/7e/bb617e1cadf60bdddf848aa586ab6391.jpg'" alt="default image" style="width: 20%; height: 25% ">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p hoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" hoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<h3 hoverAffect="underline">Comedy Movies-</h3>
+<ul>
+  <li  *ngFor="let content of contents | filterContent: 'comedy'">
+
+    <div class="content-card" >
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 20%; height: 25%">
+        <ng-template #defaultImage>
+          <img [src]="'https://i.pinimg.com/736x/bb/61/7e/bb617e1cadf60bdddf848aa586ab6391.jpg'" alt="default image" style="width: 20%; height: 25% ">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p hoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" hoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
+
+<h3 hoverAffect="underline">Action Movies</h3>
+<ul>
+  <li *ngFor="let content of contents | filterContent:'action'">
+
+    <div class="content-card" >
+      <h1 class="content-card-header">
+        {{content.title}}
+      </h1>
+      <div class="content-card-body">
+        <img *ngIf="content.imgURL; else defaultImage" [src]="content.imgURL" alt="content image" style="width: 20%; height: 25% ">
+        <ng-template #defaultImage>
+          <img [src]="'https://i.pinimg.com/736x/bb/61/7e/bb617e1cadf60bdddf848aa586ab6391.jpg'" alt="default image" style="width: 20%; height: 25% ">
+        </ng-template>
+        <p style="font-size:25px">{{ content.description }}</p>
+        <p><strong>Creator:</strong> {{ content.creator }}</p>
+        <p hoverAffect="underline" style="font-size: 20px"><strong>Type:</strong> {{ content.type }}</p>
+        <p style="font-size: 20px">
+          <strong>Tags:</strong>
+          <span *ngFor="let tag of content.tags" hoverAffect="bold">&emsp;{{ tag }}</span>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
