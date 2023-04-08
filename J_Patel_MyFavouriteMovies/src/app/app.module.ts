@@ -7,7 +7,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { FilterContentPipe } from './filter-content.pipe';
 import {FormsModule} from "@angular/forms";
 import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
-import { CreateContentComponent } from './create-content/create-content.component';
+
 
 @NgModule({
   declarations: [
@@ -15,13 +15,13 @@ import { CreateContentComponent } from './create-content/create-content.componen
     ContentCardComponent,
     ContentListComponent,
     FilterContentPipe,
-    CreateContentComponent,
-    HoverAffectDirective,
-    CreateContentComponent
+
+    HoverAffectDirective
+
   ],
     imports: [
         BrowserModule,
-        FormsModule,
+      FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

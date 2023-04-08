@@ -98,22 +98,9 @@ export class ContentListComponent {
       this.searchResult = { message: `Content with title "${this.searchTitle}" doesn't exist.`, color: 'red'};
     }
   }
-  addContent(newContent: Content) {
-    const AddPromise = new Promise((resolve, reject) => {
-      this.contents.push(newContent);
-      console.log(`Content Added successfully, Country: ${this.title}`);
-      this.contents = [...this.contents];
-      resolve(newContent.title);
-    });
 
-    AddPromise.then(title => {
 
-      this.errTxt = false;
-    }).catch(err => {
-      this.errTxt = true;
-    });
 
-  }
 
 
 }
