@@ -73,3 +73,21 @@ Add an input where the user can specify an id number, and a button that, when cl
 
 
 Assignment 6 done
+
+Assignment 7
+
+Modify your content interface to accept null id values.
+
+Create a new component called ModifyContentComponent. Add the
+ModifyContentComponent to the top of your ContentList.
+
+add field to html file of ModifyContentComponent
+
+
+
+add masage after content added
+
+ id number for the content is automatically being set by the simulated server
+ 
+ 
+ assignment 7 done
