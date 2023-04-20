@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // @ts-ignore
 import {Content} from '../helper-files/content-interface';
 import { CONTENT } from '../helper-files/contentDb';
+import { MovieService } from '../movie-service.service';
+
 
 @Component({
   selector: 'app-content-list',
@@ -9,13 +11,14 @@ import { CONTENT } from '../helper-files/contentDb';
   styleUrls: ['./content-list.component.scss'],
 
 })
-export class ContentListComponent {
+export class ContentListComponent  implements OnInit {
+  contents: Content[] = [];
   searchTitle: string | undefined;
   searchResult: { message: string; color: string; } | undefined;
 
   title: string = '';
   errTxt: boolean = false;
-  contents: Content[] = [];
+
   filterContent: any;
   type: string | undefined;
 
@@ -25,10 +28,10 @@ export class ContentListComponent {
     console.log(`Content id: ${id}, title: ${title}`);
   }
 
-  constructor() { }
+  constructor(private MovieService: MovieService) { }
 
   ngOnInit(): void {
-    this.contents = CONTENT;
+    this.MovieService.getContent().subscribe((contents: Content[]) => this.contents = contents);
   }
   searchByTitle() {
     const content = this.contents.find((c) => c.title === this.searchTitle);

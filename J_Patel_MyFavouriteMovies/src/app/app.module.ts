@@ -7,6 +7,8 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { FilterContentPipe } from './filter-content.pipe';
 import {FormsModule} from "@angular/forms";
 import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
+import { AppMessagesComponent } from './app-messages/app-messages.component';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -15,7 +17,8 @@ import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
     ContentCardComponent,
     ContentListComponent,
     FilterContentPipe,
-
+    AppMessagesComponent,
+    MessagesComponent,
     HoverAffectDirective
 
   ],
@@ -24,6 +27,9 @@ import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
       FormsModule
     ],
   providers: [],
+  exports: [
+    ContentCardComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
