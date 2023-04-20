@@ -53,3 +53,23 @@ added condition,If the content fails to be added the resulting rejected promise 
 add css
 
 assginment 5 done
+
+assignment 6
+
+use assignment 4 as base line 
+
+add file named contentdb and move array of content
+
+create movie service 
+
+Added a function to this service that will retrieve the content array from the contentDb file and return it using the obserable
+
+Added another method into my  new service that returns an individual item from the content array
+
+Add the ability to transmit messages to your application
+Add your new AppMessages component to the AppComponent component
+
+Add an input where the user can specify an id number, and a button that, when clicked, will use the new service to retrieve and display a single ContentCard on the page
+
+
+Assignment 6 done
