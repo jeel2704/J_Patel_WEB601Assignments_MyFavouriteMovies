@@ -1,4 +1,4 @@
-
+<app-modify-content (contentAdded)="updateContentList($event)"></app-modify-content>
 <div class= search *ngIf="contents">
   <div>
     <input type="text" [(ngModel)]="searchTitle" placeholder="Search by title">

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Content } from './helper-files/content-interface';
 import { MovieService } from './movie-service.service';
 import { MessageService } from './message.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,6 +20,7 @@ import { MessageService } from './message.service';
   ],
 
   imports: [
+
 
     AppModule
   ],

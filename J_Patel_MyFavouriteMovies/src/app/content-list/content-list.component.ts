@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {Content} from '../helper-files/content-interface';
 import { CONTENT } from '../helper-files/contentDb';
 import { MovieService } from '../movie-service.service';
-
-
+import { ContentService } from '../content.service';
+import { MessageService } from '../message.service';
 @Component({
   selector: 'app-content-list',
   templateUrl: './content-list.component.html',
@@ -28,10 +28,12 @@ export class ContentListComponent  implements OnInit {
     console.log(`Content id: ${id}, title: ${title}`);
   }
 
-  constructor(private MovieService: MovieService) { }
+  constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.MovieService.getContent().subscribe((contents: Content[]) => this.contents = contents);
+    this.contentService.getAllContent().subscribe((content: Content[]) => {
+      this.contentList = content;
+    });
   }
   searchByTitle() {
     const content = this.contents.find((c) => c.title === this.searchTitle);

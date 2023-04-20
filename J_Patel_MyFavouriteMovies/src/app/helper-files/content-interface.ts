@@ -1,7 +1,7 @@
 export interface Content {
 
 
-  id: number;
+  id?: number;
   title: string;
   description: string;
   imgURL?: string;
@@ -9,3 +9,4 @@ export interface Content {
   tags?: string [];
   creator: string;
 }
+

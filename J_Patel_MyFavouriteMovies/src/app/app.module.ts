@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
 import { AppMessagesComponent } from './app-messages/app-messages.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ModifyContentComponent } from './modify-content/modify-content.component';
 
 
 @NgModule({
@@ -19,12 +20,13 @@ import { MessagesComponent } from './messages/messages.component';
     FilterContentPipe,
     AppMessagesComponent,
     MessagesComponent,
-    HoverAffectDirective
+    HoverAffectDirective,
+    ModifyContentComponent
 
   ],
     imports: [
         BrowserModule,
-      FormsModule
+
     ],
   providers: [],
   exports: [
