@@ -15,8 +15,7 @@
 </mat-form-field>
 <button mat-button (click)="getContentCard()">Get Content Card</button>
 
-  <app-content-card *ngIf="favoriteContent$ | async as favoriteContent"
-                    [content]="favoriteContent" [style.box-shadow]="'0px 0px 5px #888888'"></app-content-card>
+<router-outlet></router-outlet>
   <app-content-list></app-content-list>
 
 

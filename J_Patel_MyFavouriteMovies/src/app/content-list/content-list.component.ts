@@ -31,8 +31,12 @@ export class ContentListComponent  implements OnInit {
   constructor(private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.contentService.getAllContent().subscribe((content: Content[]) => {
-      this.contentList = content;
+    this.contentService.getAllContent().subscribe(
+      (data: Content[]) => {
+        this.contents = data;
+      },
+        error => {
+          console.error(error);
     });
   }
   searchByTitle() {

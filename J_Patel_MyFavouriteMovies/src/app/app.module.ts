@@ -13,8 +13,15 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-
+const routes: Routes = [
+  { path: '', redirectTo: '/list', pathMatch: 'full' }, // redirect to the list page
+  { path: 'list', component: ContentListComponent },
+  { path: 'detail/:id', component: ContentDetailComponent },
+  { path: '**', component: PageNotFoundComponent } // handle any invalid urls
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,11 +32,14 @@ import { AddContentDialogComponent } from './add-content-dialog/add-content-dial
     MessagesComponent,
     HoverAffectDirective,
     ModifyContentComponent,
-    AddContentDialogComponent
+    AddContentDialogComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent
 
   ],
     imports: [
         BrowserModule,
+      RouterModule.forRoot(routes),
       MatButtonModule,
       MatInputModule,
 

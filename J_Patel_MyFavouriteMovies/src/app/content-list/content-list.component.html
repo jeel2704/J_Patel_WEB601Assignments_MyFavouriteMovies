@@ -87,3 +87,13 @@
     </div>
   </li>
 </ul>
+<mat-card>
+  <mat-card-title>Content List</mat-card-title>
+  <mat-card-content>
+    <ul>
+      <li *ngFor="let content of contentList">
+        <a [routerLink]="['/content', content.id]">{{ content.title }}</a>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>
