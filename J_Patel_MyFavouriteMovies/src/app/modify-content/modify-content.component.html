@@ -1,27 +1,28 @@
+<button mat-raised-button color="primary" (click)="openAddContentDialog()">Add New Content</button>
 
 <div>
   <label>Title:</label>
-  <input type="text" [(ngModel)]="newContent.title" name="title" />
+  <input mat-input type="text" [(ngModel)]="newContent.title" name="title" />
 </div>
 <div>
   <label>Description:</label>
-  <input type="text" [(ngModel)]="newContent.description" name="description" />
+  <input mat-input type="text" [(ngModel)]="newContent.description" name="description" />
 </div>
 <div>
   <label>Url:</label>
-  <input type="text" [(ngModel)]="newContent.imgURL" name="url" />
+  <input mat-input type="text" [(ngModel)]="newContent.imgURL" name="url" />
 </div>
 <div>
   <label>Url:</label>
-  <input type="text" [(ngModel)]="newContent.type" name="type" />
+  <input mat-input  type="text" [(ngModel)]="newContent.type" name="type" />
 </div>
 <div>
   <label>tags:</label>
-  <input type="text" [(ngModel)]="newContent.tags" name="tag" />
+  <input mat-input type="text" [(ngModel)]="newContent.tags" name="tag" />
 </div>
 <div>
   <label>creator:</label>
-  <input type="text" [(ngModel)]="newContent.creator" name="tag" />
+  <input mat-input type="text" [(ngModel)]="newContent.creator" name="tag" />
 </div>
 <button (click)="updateMode ? updateContent() : addContent()">
   {{ updateMode ? 'Update Content' : 'Add Content' }}

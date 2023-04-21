@@ -10,6 +10,9 @@ import { HoverAffectDirective } from './content-card/Hover-Affectdirective';
 import { AppMessagesComponent } from './app-messages/app-messages.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ModifyContentComponent } from './modify-content/modify-content.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { AddContentDialogComponent } from './add-content-dialog/add-content-dialog.component';
 
 
 @NgModule({
@@ -21,11 +24,14 @@ import { ModifyContentComponent } from './modify-content/modify-content.componen
     AppMessagesComponent,
     MessagesComponent,
     HoverAffectDirective,
-    ModifyContentComponent
+    ModifyContentComponent,
+    AddContentDialogComponent
 
   ],
     imports: [
         BrowserModule,
+      MatButtonModule,
+      MatInputModule,
 
     ],
   providers: [],

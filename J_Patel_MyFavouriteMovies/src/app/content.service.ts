@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Content } from './content';
+import { Content } from './helper-files/content-interface';
 
 @Injectable({
   providedIn: 'root'
