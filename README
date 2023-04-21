@@ -105,3 +105,22 @@ content
 
 assignment 8 done
 
+Assignment 9
+
+Change the version in your package.json to 0.0.9.
+
+Add a component that displays a more detailed view of specific content
+item based on the content's id in the url when a user visits it.
+
+Add routing to the application such that users can visit the content list and individual content
+detail pages without the page having to reload going back and forth between the two.
+
+Add the link to the content detail page in the content card 
+
+add a message using the MessageService
+to display the id and title of the content that was retrieved
+
+Add a route in your application that handles any invalid url's and displays some kind of 'Page
+not found' message to the user
+
+Assignment 9 done
