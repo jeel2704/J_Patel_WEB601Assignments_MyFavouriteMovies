@@ -91,3 +91,17 @@ add masage after content added
  
  
  assignment 7 done
+ 
+ Assignment 8
+ 
+ Change the version in your package.json to 0.0.8.
+
+Add a custom angular material theme
+
+Add a new button called "Add New Content" in ModifyContentComponent
+
+Set the dialog title to "Add contentType" where contentType is the theme of the
+content
+
+assignment 8 done
+
